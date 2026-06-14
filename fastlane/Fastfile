@@ -1,0 +1,59 @@
+default_platform(:android)
+
+PACKAGE_NAME = "com.andrejivliev.shawarma58"
+AAB_PATH = "app/build/outputs/bundle/release/app-release.aab"
+METADATA_PATH = "fastlane/metadata/android"
+PLAY_TRACK = "internal"
+PLAY_RELEASE_STATUS = "draft"
+
+def require_env!(name)
+  UI.user_error!("Missing required env var: #{name}") if ENV[name].to_s.strip.empty?
+end
+
+def run_pre_upload_gate!
+  sh("python3 scripts/prepare_upload_keystore.py --strict")
+  sh("python3 scripts/play_upload_auth_qa.py --strict")
+  sh("python3 scripts/privacy_policy_hosting_qa.py --strict --fetch-privacy-url")
+  sh("python3 scripts/fastlane_runtime_qa.py --strict")
+  sh("python3 scripts/pre_upload_blockers_qa.py --strict")
+  sh("python3 scripts/package_release_candidate.py --strict-signing --fetch-privacy-url --fetch-target-api-policy --strict-screenshots --strict-physical-device --strict-pre-upload")
+  sh("python3 scripts/play_handoff_secret_scan_qa.py")
+  sh("python3 scripts/release_freshness_qa.py")
+  sh("python3 scripts/post_package_validation_qa.py")
+end
+
+def play_store_options(validate_only:)
+  {
+    package_name: PACKAGE_NAME,
+    json_key: ENV.fetch("SUPPLY_JSON_KEY"),
+    aab: AAB_PATH,
+    track: PLAY_TRACK,
+    release_status: PLAY_RELEASE_STATUS,
+    metadata_path: METADATA_PATH,
+    skip_upload_apk: true,
+    skip_upload_aab: false,
+    skip_upload_metadata: false,
+    skip_upload_changelogs: false,
+    skip_upload_images: false,
+    skip_upload_screenshots: false,
+    validate_only: validate_only
+  }
+end
+
+platform :android do
+  desc "Validate the signed AAB, metadata and graphics against Google Play without publishing changes."
+  lane :validate_internal do
+    require_env!("SUPPLY_JSON_KEY")
+    require_env!("SHAWARMA58_PRIVACY_POLICY_URL")
+    run_pre_upload_gate!
+    upload_to_play_store(**play_store_options(validate_only: true))
+  end
+
+  desc "Upload the signed v1.0.0 candidate to the Google Play internal track as a draft release."
+  lane :upload_internal do
+    require_env!("SUPPLY_JSON_KEY")
+    require_env!("SHAWARMA58_PRIVACY_POLICY_URL")
+    run_pre_upload_gate!
+    upload_to_play_store(**play_store_options(validate_only: false))
+  end
+end

@@ -1,0 +1,2 @@
+json_key(ENV["SUPPLY_JSON_KEY"])
+package_name("com.andrejivliev.shawarma58")
