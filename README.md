@@ -8,7 +8,7 @@
 ## Стек
 - Kotlin, Jetpack Compose, Material 3.
 - DataStore Preferences для прогресса и настроек.
-- `applicationId`: `com.andrejivliev.shawarma58`.
+- `applicationId`: `com.shawarma58.game`.
 - `minSdk`: 23, `targetSdk`: 35, `versionName`: 1.0.0.
 
 ## Команды

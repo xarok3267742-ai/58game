@@ -1,9 +1,9 @@
-package com.andrejivliev.shawarma58
+package com.shawarma58.game
 
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
-import com.andrejivliev.shawarma58.data.GameSettings
-import com.andrejivliev.shawarma58.data.ProgressStore
+import com.shawarma58.game.data.GameSettings
+import com.shawarma58.game.data.ProgressStore
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.runBlocking
 import org.junit.Assert.assertEquals

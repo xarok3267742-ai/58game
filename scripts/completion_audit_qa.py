@@ -22,15 +22,15 @@ REQUIRED_FILES = [
     "Gemfile.lock",
     "app/build.gradle.kts",
     "app/src/main/AndroidManifest.xml",
-    "app/src/main/java/com/andrejivliev/shawarma58/MainActivity.kt",
-    "app/src/main/java/com/andrejivliev/shawarma58/data/Models.kt",
-    "app/src/main/java/com/andrejivliev/shawarma58/data/LevelCatalog.kt",
-    "app/src/main/java/com/andrejivliev/shawarma58/data/ProgressStore.kt",
-    "app/src/main/java/com/andrejivliev/shawarma58/game/GameEngine.kt",
-    "app/src/main/java/com/andrejivliev/shawarma58/ui/Shawarma58App.kt",
-    "app/src/main/java/com/andrejivliev/shawarma58/ui/UiTestTags.kt",
-    "app/src/test/java/com/andrejivliev/shawarma58/GameRulesTest.kt",
-    "app/src/androidTest/java/com/andrejivliev/shawarma58/Shawarma58InstrumentedSmokeTest.kt",
+    "app/src/main/java/com/shawarma58/game/MainActivity.kt",
+    "app/src/main/java/com/shawarma58/game/data/Models.kt",
+    "app/src/main/java/com/shawarma58/game/data/LevelCatalog.kt",
+    "app/src/main/java/com/shawarma58/game/data/ProgressStore.kt",
+    "app/src/main/java/com/shawarma58/game/game/GameEngine.kt",
+    "app/src/main/java/com/shawarma58/game/ui/Shawarma58App.kt",
+    "app/src/main/java/com/shawarma58/game/ui/UiTestTags.kt",
+    "app/src/test/java/com/shawarma58/game/GameRulesTest.kt",
+    "app/src/androidTest/java/com/shawarma58/game/Shawarma58InstrumentedSmokeTest.kt",
     "docs/product_decision.md",
     "docs/product_spec.md",
     "docs/tech_stack_decision.md",
@@ -248,7 +248,7 @@ def verify_required_files() -> None:
 def verify_build_config() -> None:
     gradle = text("app/build.gradle.kts")
     for snippet in [
-        'applicationId = "com.andrejivliev.shawarma58"',
+        'applicationId = "com.shawarma58.game"',
         "minSdk = 23",
         "targetSdk = 35",
         "versionCode = 1",
@@ -279,8 +279,8 @@ def verify_manifest() -> None:
 
 
 def verify_content_shape() -> None:
-    models = text("app/src/main/java/com/andrejivliev/shawarma58/data/Models.kt")
-    levels = text("app/src/main/java/com/andrejivliev/shawarma58/data/LevelCatalog.kt")
+    models = text("app/src/main/java/com/shawarma58/game/data/Models.kt")
+    levels = text("app/src/main/java/com/shawarma58/game/data/LevelCatalog.kt")
     if enum_entry_count(models, "Ingredient") != 8:
         errors.append("Ingredient enum must contain 8 entries")
     if enum_entry_count(models, "CustomerType") != 4:
@@ -291,7 +291,7 @@ def verify_content_shape() -> None:
 
 
 def verify_progress_keys() -> None:
-    store = text("app/src/main/java/com/andrejivliev/shawarma58/data/ProgressStore.kt")
+    store = text("app/src/main/java/com/shawarma58/game/data/ProgressStore.kt")
     for key in EXPECTED_PROGRESS_KEYS:
         if key not in store:
             errors.append(f"ProgressStore.kt is missing key {key!r}")
@@ -500,8 +500,8 @@ def verify_assets_and_metadata_docs() -> None:
     require_contains("scripts/release_gate.py", "Store screenshot capture guard QA")
     require_contains("scripts/ui_behavior_qa.py", "rememberSaveable(stateSaver = AppScreenSaver)")
     require_contains("scripts/ui_behavior_qa.py", "activeSessionSaveableValuesRestoreCurrentShift")
-    require_contains("app/src/main/java/com/andrejivliev/shawarma58/ui/Shawarma58App.kt", "GameSessionSaver")
-    require_contains("app/src/test/java/com/andrejivliev/shawarma58/GameRulesTest.kt", "activeSessionSaveableValuesRestoreCurrentShift")
+    require_contains("app/src/main/java/com/shawarma58/game/ui/Shawarma58App.kt", "GameSessionSaver")
+    require_contains("app/src/test/java/com/shawarma58/game/GameRulesTest.kt", "activeSessionSaveableValuesRestoreCurrentShift")
     require_contains("scripts/capture_store_screenshots.py", "validate_screenshot_candidate")
     require_contains("scripts/capture_store_screenshots.py", "candidate_")
     require_contains("scripts/release_gate.py", "assembleDebugAndroidTest")

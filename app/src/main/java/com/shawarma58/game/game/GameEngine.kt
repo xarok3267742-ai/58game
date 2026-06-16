@@ -1,10 +1,10 @@
-package com.andrejivliev.shawarma58.game
+package com.shawarma58.game.game
 
-import com.andrejivliev.shawarma58.data.Ingredient
-import com.andrejivliev.shawarma58.data.LevelCatalog
-import com.andrejivliev.shawarma58.data.LevelConfig
-import com.andrejivliev.shawarma58.data.RecipeOrder
-import com.andrejivliev.shawarma58.data.ScoreResult
+import com.shawarma58.game.data.Ingredient
+import com.shawarma58.game.data.LevelCatalog
+import com.shawarma58.game.data.LevelConfig
+import com.shawarma58.game.data.RecipeOrder
+import com.shawarma58.game.data.ScoreResult
 
 data class GameSession(
     val level: LevelConfig,

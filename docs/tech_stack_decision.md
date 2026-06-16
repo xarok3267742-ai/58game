@@ -20,4 +20,4 @@ Kotlin + Jetpack Compose + Material 3, Android Gradle Plugin 8.10.1, Kotlin 2.0.
 ```
 
 ## Ограничения окружения
-Android SDK установлен локально в `/Users/andrejivliev/Library/Android/sdk`. При первой проверке Gradle не смог скачать часть lifecycle 2.8.3 из-за TLS handshake с `dl.google.com`, поэтому dependencies закреплены на доступном cached lifecycle 2.8.7.
+Android SDK установлен локально в `/Users/shawarma58/Library/Android/sdk`. При первой проверке Gradle не смог скачать часть lifecycle 2.8.3 из-за TLS handshake с `dl.google.com`, поэтому dependencies закреплены на доступном cached lifecycle 2.8.7.

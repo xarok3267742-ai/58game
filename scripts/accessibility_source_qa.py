@@ -8,8 +8,8 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-UI = ROOT / "app/src/main/java/com/andrejivliev/shawarma58/ui/Shawarma58App.kt"
-ANDROID_TEST = ROOT / "app/src/androidTest/java/com/andrejivliev/shawarma58/Shawarma58InstrumentedSmokeTest.kt"
+UI = ROOT / "app/src/main/java/com/shawarma58/game/ui/Shawarma58App.kt"
+ANDROID_TEST = ROOT / "app/src/androidTest/java/com/shawarma58/game/Shawarma58InstrumentedSmokeTest.kt"
 ACCESSIBILITY_DOC = ROOT / "docs/accessibility_notes.md"
 UI_AUDIT = ROOT / "docs/ui_audit.md"
 REPORT_MD = ROOT / "build/reports/accessibility_source.md"

@@ -1,4 +1,4 @@
-package com.andrejivliev.shawarma58
+package com.shawarma58.game
 
 import android.view.KeyEvent
 import androidx.compose.ui.semantics.SemanticsProperties
@@ -19,13 +19,13 @@ import androidx.compose.ui.test.performClick
 import androidx.compose.ui.test.performScrollToNode
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
-import com.andrejivliev.shawarma58.data.GameSettings
-import com.andrejivliev.shawarma58.data.Ingredient
-import com.andrejivliev.shawarma58.data.PlayerProgress
-import com.andrejivliev.shawarma58.data.ProgressRepository
-import com.andrejivliev.shawarma58.ui.Shawarma58App
-import com.andrejivliev.shawarma58.ui.UiTestTags
-import com.andrejivliev.shawarma58.ui.theme.Shawarma58Theme
+import com.shawarma58.game.data.GameSettings
+import com.shawarma58.game.data.Ingredient
+import com.shawarma58.game.data.PlayerProgress
+import com.shawarma58.game.data.ProgressRepository
+import com.shawarma58.game.ui.Shawarma58App
+import com.shawarma58.game.ui.UiTestTags
+import com.shawarma58.game.ui.theme.Shawarma58Theme
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import org.junit.Assert.assertEquals

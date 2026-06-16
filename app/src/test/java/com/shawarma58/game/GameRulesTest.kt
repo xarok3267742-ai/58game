@@ -1,28 +1,28 @@
-package com.andrejivliev.shawarma58
+package com.shawarma58.game
 
 import androidx.compose.ui.hapticfeedback.HapticFeedbackType
-import com.andrejivliev.shawarma58.data.Ingredient
-import com.andrejivliev.shawarma58.data.LevelCatalog
-import com.andrejivliev.shawarma58.data.LevelConfig
-import com.andrejivliev.shawarma58.data.MAX_STARS_PER_LEVEL
-import com.andrejivliev.shawarma58.data.PlayerProgress
-import com.andrejivliev.shawarma58.data.RecipeOrder
-import com.andrejivliev.shawarma58.data.ScoreResult
-import com.andrejivliev.shawarma58.game.GameEngine
-import com.andrejivliev.shawarma58.game.GameRules
-import com.andrejivliev.shawarma58.ui.canStartNextLevel
-import com.andrejivliev.shawarma58.ui.ingredientToggleHaptic
-import com.andrejivliev.shawarma58.ui.levelWorkloadLabel
-import com.andrejivliev.shawarma58.ui.orderCountLabel
-import com.andrejivliev.shawarma58.ui.orderFeedbackHaptic
-import com.andrejivliev.shawarma58.ui.orderFeedbackTone
-import com.andrejivliev.shawarma58.ui.playableLevelFor
-import com.andrejivliev.shawarma58.ui.restoreSessionFromSaveableValues
-import com.andrejivliev.shawarma58.ui.resultFeedback
-import com.andrejivliev.shawarma58.ui.resultPrimaryActionText
-import com.andrejivliev.shawarma58.ui.saveableValuesForSession
-import com.andrejivliev.shawarma58.ui.serveFeedback
-import com.andrejivliev.shawarma58.ui.shouldPlayOrderFeedback
+import com.shawarma58.game.data.Ingredient
+import com.shawarma58.game.data.LevelCatalog
+import com.shawarma58.game.data.LevelConfig
+import com.shawarma58.game.data.MAX_STARS_PER_LEVEL
+import com.shawarma58.game.data.PlayerProgress
+import com.shawarma58.game.data.RecipeOrder
+import com.shawarma58.game.data.ScoreResult
+import com.shawarma58.game.game.GameEngine
+import com.shawarma58.game.game.GameRules
+import com.shawarma58.game.ui.canStartNextLevel
+import com.shawarma58.game.ui.ingredientToggleHaptic
+import com.shawarma58.game.ui.levelWorkloadLabel
+import com.shawarma58.game.ui.orderCountLabel
+import com.shawarma58.game.ui.orderFeedbackHaptic
+import com.shawarma58.game.ui.orderFeedbackTone
+import com.shawarma58.game.ui.playableLevelFor
+import com.shawarma58.game.ui.restoreSessionFromSaveableValues
+import com.shawarma58.game.ui.resultFeedback
+import com.shawarma58.game.ui.resultPrimaryActionText
+import com.shawarma58.game.ui.saveableValuesForSession
+import com.shawarma58.game.ui.serveFeedback
+import com.shawarma58.game.ui.shouldPlayOrderFeedback
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue
@@ -33,7 +33,7 @@ class GameRulesTest {
     fun exactIngredientSetMatchesOrder() {
         val order = RecipeOrder(
             id = 1,
-            customer = com.andrejivliev.shawarma58.data.CustomerType.OFFICE,
+            customer = com.shawarma58.game.data.CustomerType.OFFICE,
             title = "Тест",
             ingredients = listOf(Ingredient.LAVASH, Ingredient.CHICKEN, Ingredient.GARLIC),
         )
@@ -295,8 +295,8 @@ class GameRulesTest {
 
     @Test
     fun orderFeedbackFollowsSoundSettingAndCorrectness() {
-        assertTrue(shouldPlayOrderFeedback(com.andrejivliev.shawarma58.data.GameSettings(soundEnabled = true)))
-        assertFalse(shouldPlayOrderFeedback(com.andrejivliev.shawarma58.data.GameSettings(soundEnabled = false)))
+        assertTrue(shouldPlayOrderFeedback(com.shawarma58.game.data.GameSettings(soundEnabled = true)))
+        assertFalse(shouldPlayOrderFeedback(com.shawarma58.game.data.GameSettings(soundEnabled = false)))
         assertTrue(orderFeedbackTone(correct = true) != orderFeedbackTone(correct = false))
     }
 
@@ -538,7 +538,7 @@ class GameRulesTest {
         assertEquals(24, LevelCatalog.levels.size)
         assertEquals(72, LevelCatalog.levels.size * MAX_STARS_PER_LEVEL)
         assertEquals(8, Ingredient.entries.size)
-        assertEquals(4, com.andrejivliev.shawarma58.data.CustomerType.entries.size)
+        assertEquals(4, com.shawarma58.game.data.CustomerType.entries.size)
         assertTrue(LevelCatalog.levels.all { it.targetOrders >= 3 })
         assertTrue(LevelCatalog.levels.all { it.durationSeconds >= 52 })
     }

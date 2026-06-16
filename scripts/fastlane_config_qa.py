@@ -33,7 +33,7 @@ REQUIRED_FILES = [
     ROOT / "fastlane/metadata/android/ru-RU/images/phoneScreenshots/05_result.png",
 ]
 FASTFILE_REQUIRED = [
-    'PACKAGE_NAME = "com.andrejivliev.shawarma58"',
+    'PACKAGE_NAME = "com.shawarma58.game"',
     'AAB_PATH = "app/build/outputs/bundle/release/app-release.aab"',
     'METADATA_PATH = "fastlane/metadata/android"',
     'PLAY_TRACK = "internal"',
@@ -65,7 +65,7 @@ FASTFILE_REQUIRED = [
 ]
 APPFILE_REQUIRED = [
     'json_key(ENV["SUPPLY_JSON_KEY"])',
-    'package_name("com.andrejivliev.shawarma58")',
+    'package_name("com.shawarma58.game")',
 ]
 DOC_REQUIRED = [
     "bundle exec fastlane android validate_internal",

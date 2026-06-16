@@ -1,4 +1,4 @@
-package com.andrejivliev.shawarma58.data
+package com.shawarma58.game.data
 
 object LevelCatalog {
     private val recipeTemplates = listOf(

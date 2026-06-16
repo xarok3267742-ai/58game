@@ -41,7 +41,7 @@
 - `targetSdk`: 35, соответствует текущей опубликованной Google Play mobile submission baseline for new apps/app updates from August 31, 2025.
 - `minSdk`: 23.
 - `versionCode`: 1.
-- `applicationId`: `com.andrejivliev.shawarma58`.
+- `applicationId`: `com.shawarma58.game`.
 
 ## Store graphics
 - Play app icon: `store/play_icon.png`, 512x512 RGBA PNG; local adaptive preview remains saved at `store/launcher_icon_preview.png` for launcher QA.

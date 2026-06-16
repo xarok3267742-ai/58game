@@ -1,4 +1,4 @@
-package com.andrejivliev.shawarma58.ui.theme
+package com.shawarma58.game.ui.theme
 
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.lightColorScheme

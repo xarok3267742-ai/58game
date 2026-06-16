@@ -1,2 +1,2 @@
 json_key(ENV["SUPPLY_JSON_KEY"])
-package_name("com.andrejivliev.shawarma58")
+package_name("com.shawarma58.game")

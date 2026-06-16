@@ -1,4 +1,4 @@
-package com.andrejivliev.shawarma58.ui
+package com.shawarma58.game.ui
 
 import android.media.AudioManager
 import android.media.ToneGenerator
@@ -73,19 +73,19 @@ import androidx.compose.ui.unit.sp
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleEventObserver
 import androidx.lifecycle.compose.LocalLifecycleOwner
-import com.andrejivliev.shawarma58.R
-import com.andrejivliev.shawarma58.data.GameSettings
-import com.andrejivliev.shawarma58.data.Ingredient
-import com.andrejivliev.shawarma58.data.LevelCatalog
-import com.andrejivliev.shawarma58.data.LevelConfig
-import com.andrejivliev.shawarma58.data.MAX_STARS_PER_LEVEL
-import com.andrejivliev.shawarma58.data.PlayerProgress
-import com.andrejivliev.shawarma58.data.ProgressRepository
-import com.andrejivliev.shawarma58.data.RecipeOrder
-import com.andrejivliev.shawarma58.data.ScoreResult
-import com.andrejivliev.shawarma58.game.GameEngine
-import com.andrejivliev.shawarma58.game.GameRules
-import com.andrejivliev.shawarma58.game.GameSession
+import com.shawarma58.game.R
+import com.shawarma58.game.data.GameSettings
+import com.shawarma58.game.data.Ingredient
+import com.shawarma58.game.data.LevelCatalog
+import com.shawarma58.game.data.LevelConfig
+import com.shawarma58.game.data.MAX_STARS_PER_LEVEL
+import com.shawarma58.game.data.PlayerProgress
+import com.shawarma58.game.data.ProgressRepository
+import com.shawarma58.game.data.RecipeOrder
+import com.shawarma58.game.data.ScoreResult
+import com.shawarma58.game.game.GameEngine
+import com.shawarma58.game.game.GameRules
+import com.shawarma58.game.game.GameSession
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 

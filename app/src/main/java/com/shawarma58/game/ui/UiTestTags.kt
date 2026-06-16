@@ -1,6 +1,6 @@
-package com.andrejivliev.shawarma58.ui
+package com.shawarma58.game.ui
 
-import com.andrejivliev.shawarma58.data.Ingredient
+import com.shawarma58.game.data.Ingredient
 
 object UiTestTags {
     const val SCREEN_ONBOARDING = "screen_onboarding"

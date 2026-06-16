@@ -1,11 +1,11 @@
-package com.andrejivliev.shawarma58
+package com.shawarma58.game
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import com.andrejivliev.shawarma58.data.ProgressStore
-import com.andrejivliev.shawarma58.ui.Shawarma58App
-import com.andrejivliev.shawarma58.ui.theme.Shawarma58Theme
+import com.shawarma58.game.data.ProgressStore
+import com.shawarma58.game.ui.Shawarma58App
+import com.shawarma58.game.ui.theme.Shawarma58Theme
 
 class MainActivity : ComponentActivity() {
     private val progressStore by lazy { ProgressStore(applicationContext) }

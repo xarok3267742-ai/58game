@@ -9,9 +9,9 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-UI = ROOT / "app/src/main/java/com/andrejivliev/shawarma58/ui/Shawarma58App.kt"
-UI_TAGS = ROOT / "app/src/main/java/com/andrejivliev/shawarma58/ui/UiTestTags.kt"
-ANDROID_TEST = ROOT / "app/src/androidTest/java/com/andrejivliev/shawarma58/Shawarma58InstrumentedSmokeTest.kt"
+UI = ROOT / "app/src/main/java/com/shawarma58/game/ui/Shawarma58App.kt"
+UI_TAGS = ROOT / "app/src/main/java/com/shawarma58/game/ui/UiTestTags.kt"
+ANDROID_TEST = ROOT / "app/src/androidTest/java/com/shawarma58/game/Shawarma58InstrumentedSmokeTest.kt"
 REPORT_MD = ROOT / "build/reports/ui_behavior.md"
 REPORT_JSON = ROOT / "build/reports/ui_behavior.json"
 FORBIDDEN = ["TODO", "FIXME", "lorem", "placeholder", "CONCEPT_ONLY"]
@@ -132,7 +132,7 @@ def write_reports(checks: list[Check], errors: list[str]) -> None:
             UI.relative_to(ROOT).as_posix(),
             UI_TAGS.relative_to(ROOT).as_posix(),
             ANDROID_TEST.relative_to(ROOT).as_posix(),
-            "app/src/test/java/com/andrejivliev/shawarma58/GameRulesTest.kt",
+            "app/src/test/java/com/shawarma58/game/GameRulesTest.kt",
         ],
         "requiredSnippets": REQUIRED_SNIPPETS,
         "requiredCopy": REQUIRED_COPY,
@@ -196,7 +196,7 @@ def main() -> None:
     for test_name in REQUIRED_TEST_COVERAGE:
         test_source = android_test
         if test_name == "activeSessionSaveableValuesRestoreCurrentShift":
-            unit_test = ROOT / "app/src/test/java/com/andrejivliev/shawarma58/GameRulesTest.kt"
+            unit_test = ROOT / "app/src/test/java/com/shawarma58/game/GameRulesTest.kt"
             test_source = unit_test.read_text(encoding="utf-8") if unit_test.exists() else ""
         if test_name not in test_source:
             errors.append(f"test coverage missing {test_name}")

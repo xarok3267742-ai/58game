@@ -8,7 +8,7 @@ Use this packet for the first Google Play internal-test upload of "Шаурма 
 | Field | Value |
 |---|---|
 | App name | `Шаурма 58` |
-| Package name | `com.andrejivliev.shawarma58` |
+| Package name | `com.shawarma58.game` |
 | Version code | `1` |
 | Version name | `1.0.0` |
 | Default language | `ru-RU` |
@@ -303,7 +303,7 @@ build/reports/play_handoff_secret_scan.md
 ```
 
 ## First rollout
-1. Create the app in Play Console with package `com.andrejivliev.shawarma58`.
+1. Create the app in Play Console with package `com.shawarma58.game`.
 2. Fill the store listing from `fastlane/metadata/android/ru-RU`.
 3. Prepare upload signing, `SUPPLY_JSON_KEY`, `SHAWARMA58_PRIVACY_POLICY_URL` and the upload-machine Fastlane runtime outside the repository.
 4. Follow `docs/upload_operator_runbook.md` and run `python3 scripts/upload_operator_runbook_qa.py`.

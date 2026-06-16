@@ -28,7 +28,7 @@ MAPPING_DIR = ROOT / "app/build/outputs/mapping/release"
 REPORT_JSON = ROOT / "build/reports/artifact_provenance.json"
 REPORT_MD = ROOT / "build/reports/artifact_provenance.md"
 
-EXPECTED_PACKAGE = "com.andrejivliev.shawarma58"
+EXPECTED_PACKAGE = "com.shawarma58.game"
 EXPECTED_DEBUG_PACKAGE = f"{EXPECTED_PACKAGE}.debug"
 EXPECTED_VERSION_CODE = "1"
 EXPECTED_VERSION_NAME = "1.0.0"
@@ -36,7 +36,7 @@ EXPECTED_DEBUG_VERSION_NAME = "1.0.0-debug"
 EXPECTED_MIN_SDK = "23"
 EXPECTED_TARGET_SDK = "35"
 EXPECTED_COMPILE_SDK = "35"
-EXPECTED_ACTIVITY = "com.andrejivliev.shawarma58.MainActivity"
+EXPECTED_ACTIVITY = "com.shawarma58.game.MainActivity"
 REQUIRED_SIGNING_ENV = (
     "SHAWARMA58_KEYSTORE",
     "SHAWARMA58_KEYSTORE_PASSWORD",
@@ -299,8 +299,8 @@ def check_debug_manifest(info: dict[str, object]) -> Check:
 def check_gradle_config() -> Check:
     script = APP_GRADLE.read_text(encoding="utf-8")
     required = {
-        'namespace = "com.andrejivliev.shawarma58"': "namespace",
-        'applicationId = "com.andrejivliev.shawarma58"': "applicationId",
+        'namespace = "com.shawarma58.game"': "namespace",
+        'applicationId = "com.shawarma58.game"': "applicationId",
         "compileSdk = 35": "compileSdk",
         "minSdk = 23": "minSdk",
         "targetSdk = 35": "targetSdk",

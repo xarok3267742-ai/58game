@@ -1,8 +1,8 @@
-package com.andrejivliev.shawarma58.ui
+package com.shawarma58.game.ui
 
-import com.andrejivliev.shawarma58.R
-import com.andrejivliev.shawarma58.data.CustomerType
-import com.andrejivliev.shawarma58.data.Ingredient
+import com.shawarma58.game.R
+import com.shawarma58.game.data.CustomerType
+import com.shawarma58.game.data.Ingredient
 
 fun imageFor(ingredient: Ingredient): Int = when (ingredient) {
     Ingredient.LAVASH -> R.drawable.ingredient_lavash

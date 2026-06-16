@@ -13,9 +13,9 @@ REPORT_MD = ROOT / "build/reports/content_copy.md"
 REPORT_JSON = ROOT / "build/reports/content_copy.json"
 
 TARGET_FILES = [
-    "app/src/main/java/com/andrejivliev/shawarma58/data/Models.kt",
-    "app/src/main/java/com/andrejivliev/shawarma58/data/LevelCatalog.kt",
-    "app/src/main/java/com/andrejivliev/shawarma58/ui/Shawarma58App.kt",
+    "app/src/main/java/com/shawarma58/game/data/Models.kt",
+    "app/src/main/java/com/shawarma58/game/data/LevelCatalog.kt",
+    "app/src/main/java/com/shawarma58/game/ui/Shawarma58App.kt",
     "app/src/main/res/values/strings.xml",
     "fastlane/metadata/android/ru-RU/title.txt",
     "fastlane/metadata/android/ru-RU/short_description.txt",
@@ -260,14 +260,14 @@ def write_reports(checks: list[Check]) -> None:
 def main() -> None:
     app_text = "\n".join(
         [
-            read("app/src/main/java/com/andrejivliev/shawarma58/ui/Shawarma58App.kt"),
+            read("app/src/main/java/com/shawarma58/game/ui/Shawarma58App.kt"),
             read("app/src/main/res/values/strings.xml"),
         ],
     )
     domain_text = "\n".join(
         [
-            read("app/src/main/java/com/andrejivliev/shawarma58/data/Models.kt"),
-            read("app/src/main/java/com/andrejivliev/shawarma58/data/LevelCatalog.kt"),
+            read("app/src/main/java/com/shawarma58/game/data/Models.kt"),
+            read("app/src/main/java/com/shawarma58/game/data/LevelCatalog.kt"),
         ],
     )
     store_text = "\n".join(

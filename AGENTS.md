@@ -5,7 +5,7 @@ Offline-first Android casual time-management игра для русскоязы�
 
 ## Стек
 - Kotlin + Jetpack Compose + Material 3.
-- Single Activity: `com.andrejivliev.shawarma58.MainActivity`.
+- Single Activity: `com.shawarma58.game.MainActivity`.
 - Локальное состояние: DataStore Preferences.
 - Backend, аккаунты, интернет, реклама и платежи в v1 отсутствуют.
 
@@ -17,9 +17,9 @@ Offline-first Android casual time-management игра для русскоязы�
 - Release bundle: `./gradlew bundleRelease`.
 
 ## Структура
-- `app/src/main/java/com/andrejivliev/shawarma58/data` — модели, уровни, прогресс.
-- `app/src/main/java/com/andrejivliev/shawarma58/game` — чистая игровая логика.
-- `app/src/main/java/com/andrejivliev/shawarma58/ui` — Compose UI и mapping ассетов.
+- `app/src/main/java/com/shawarma58/game/data` — модели, уровни, прогресс.
+- `app/src/main/java/com/shawarma58/game/game` — чистая игровая логика.
+- `app/src/main/java/com/shawarma58/game/ui` — Compose UI и mapping ассетов.
 - `app/src/main/res/drawable-nodpi` — ImageGen gameplay/store-facing bitmap assets.
 - `docs` — продуктовые, QA, Play и release документы.
 - `store` — store creatives concepts и audit artifacts.

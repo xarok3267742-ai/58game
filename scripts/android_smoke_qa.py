@@ -14,8 +14,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_APK = ROOT / "app/build/outputs/apk/debug/app-debug.apk"
-DEFAULT_PACKAGE = "com.andrejivliev.shawarma58.debug"
-DEFAULT_ACTIVITY = "com.andrejivliev.shawarma58.MainActivity"
+DEFAULT_PACKAGE = "com.shawarma58.game.debug"
+DEFAULT_ACTIVITY = "com.shawarma58.game.MainActivity"
 
 
 @dataclass(frozen=True)

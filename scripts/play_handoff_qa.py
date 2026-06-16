@@ -845,7 +845,7 @@ def main() -> None:
                     errors.append("artifact provenance AAB checksum does not match handoff upload AAB")
         else:
             errors.append("artifact provenance report missing artifacts object")
-        if provenance.get("packageName") != "com.andrejivliev.shawarma58":
+        if provenance.get("packageName") != "com.shawarma58.game":
             errors.append("artifact provenance packageName mismatch")
         if provenance.get("versionName") != "1.0.0":
             errors.append("artifact provenance versionName mismatch")
@@ -919,7 +919,7 @@ def main() -> None:
                 if required_name not in names:
                     errors.append(f"content copy report missing {required_name!r}")
         targets = content_copy.get("targetFiles")
-        if not isinstance(targets, list) or "app/src/main/java/com/andrejivliev/shawarma58/ui/Shawarma58App.kt" not in targets:
+        if not isinstance(targets, list) or "app/src/main/java/com/shawarma58/game/ui/Shawarma58App.kt" not in targets:
             errors.append("content copy report missing targetFiles coverage")
         md_path = handoff / "qa/content_copy/content_copy.md"
         if not md_path.exists():
@@ -995,7 +995,7 @@ def main() -> None:
                 if required_name not in names:
                     errors.append(f"UI behavior report missing {required_name!r}")
         source_files = ui_behavior.get("sourceFiles")
-        if not isinstance(source_files, list) or "app/src/main/java/com/andrejivliev/shawarma58/ui/Shawarma58App.kt" not in source_files:
+        if not isinstance(source_files, list) or "app/src/main/java/com/shawarma58/game/ui/Shawarma58App.kt" not in source_files:
             errors.append("UI behavior report missing sourceFiles coverage")
         required_coverage = ui_behavior.get("requiredTestCoverage")
         if not isinstance(required_coverage, list) or "activeSessionSaveableValuesRestoreCurrentShift" not in required_coverage:
@@ -1492,7 +1492,7 @@ def main() -> None:
         if not isinstance(summary, dict):
             errors.append("store screenshot capture report missing summary object")
         else:
-            if summary.get("package") != "com.andrejivliev.shawarma58.debug":
+            if summary.get("package") != "com.shawarma58.game.debug":
                 errors.append("store screenshot capture package must be the debug app")
             captured = summary.get("captured")
             if not isinstance(captured, list) or len(captured) != 7:
@@ -1848,7 +1848,7 @@ def main() -> None:
         connected_perf = json.loads(connected_perf_path.read_text(encoding="utf-8"))
         if connected_perf.get("status") not in {"PASS", "PASS_WITH_WARNINGS"}:
             errors.append("connected performance report must be PASS or PASS_WITH_WARNINGS when included")
-        if connected_perf.get("package") != "com.andrejivliev.shawarma58.debug":
+        if connected_perf.get("package") != "com.shawarma58.game.debug":
             errors.append("connected performance package must be the debug app")
         if not isinstance(connected_perf.get("serial"), str) or not connected_perf.get("serial"):
             errors.append("connected performance report missing serial")
@@ -1930,7 +1930,7 @@ def main() -> None:
                 errors.append("connected smoke summary is missing")
             else:
                 summary = summary_path.read_text(encoding="utf-8")
-                required_terms = ["Status: PASS", "Package: `com.andrejivliev.shawarma58.debug`"]
+                required_terms = ["Status: PASS", "Package: `com.shawarma58.game.debug`"]
                 if not args.allow_basic_smoke:
                     required_terms.append("Mode: `extended`")
                 for term in required_terms:

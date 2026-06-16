@@ -16,7 +16,7 @@ export SHAWARMA58_PRIVACY_POLICY_URL="https://your-public-domain.example/shawarm
 ```
 
 Rules:
-- `SHAWARMA58_KEYSTORE` and `SUPPLY_JSON_KEY` must point outside `/Users/andrejivliev/Desktop/58 game`.
+- `SHAWARMA58_KEYSTORE` and `SUPPLY_JSON_KEY` must point outside `/Users/shawarma58/Desktop/58 game`.
 - `SHAWARMA58_PRIVACY_POLICY_URL` must be public HTTPS, non-PDF and non-geofenced.
 - The uploaded AAB must be rebuilt after signing env vars are set.
 - The physical-device sanity pass must use a real non-emulator Android phone.

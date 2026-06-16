@@ -963,7 +963,7 @@ def create_manifest(
     manifest = {
         "generatedAt": datetime.now(timezone.utc).replace(microsecond=0).isoformat(),
         "project": "Шаурма 58",
-        "packageName": "com.andrejivliev.shawarma58",
+        "packageName": "com.shawarma58.game",
         "versionCode": 1,
         "versionName": "1.0.0",
         "defaultLanguage": "ru-RU",

@@ -15,7 +15,7 @@ ROOT = Path(__file__).resolve().parents[1]
 CAPTURE_ROOT = ROOT / "build/store_screenshot_capture"
 REPORT_MD = ROOT / "build/reports/store_screenshot_capture.md"
 REPORT_JSON = ROOT / "build/reports/store_screenshot_capture.json"
-EXPECTED_PACKAGE = "com.andrejivliev.shawarma58.debug"
+EXPECTED_PACKAGE = "com.shawarma58.game.debug"
 EXPECTED_SIZE = (1080, 2400)
 SCREENSHOTS = [
     "shawarma_onboarding.png",

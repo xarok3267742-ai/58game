@@ -52,7 +52,7 @@
 ## Connected automated
 - `python3 scripts/android_smoke_qa.py --serial <adb-serial>`: installs debug APK on a booted emulator/device with `adb install -r -d`, verifies the launchable activity resolves, retries a clean reinstall of only this debug package if needed, clears app data, verifies foreground package, completes onboarding, starts level 1, serves three correct orders and checks the result screen plus crash buffer. Evidence is written to `build/android_smoke/<timestamp>/`.
 - `python3 scripts/android_smoke_qa.py --serial <adb-serial> --extended`: verifies settings toggle persistence after returning to menu, wrong-order state, Android Back opening pause before exit, Home/background opening pause on return, endless result and crash buffer.
-- `python3 scripts/instrumentation_smoke_qa.py --require-device`: runs the Compose semantics-based instrumentation suite in `app/src/androidTest/java/com/andrejivliev/shawarma58/Shawarma58InstrumentedSmokeTest.kt`.
+- `python3 scripts/instrumentation_smoke_qa.py --require-device`: runs the Compose semantics-based instrumentation suite in `app/src/androidTest/java/com/shawarma58/game/Shawarma58InstrumentedSmokeTest.kt`.
 - `python3 scripts/connected_performance_qa.py --serial <adb-serial> --no-force-stop-others`: captures memory/frame diagnostic artifacts after the instrumentation flow without force-stopping other third-party packages on shared emulators; frame values are diagnostic on emulators and memory/crash checks are blocking.
 
 ## Manual smoke

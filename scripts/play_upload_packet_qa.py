@@ -46,7 +46,7 @@ SIGNING_ENV = [
     "SHAWARMA58_KEY_PASSWORD",
 ]
 REQUIRED_PACKET_TERMS = [
-    "com.andrejivliev.shawarma58",
+    "com.shawarma58.game",
     "app/build/outputs/bundle/release/app-release.aab",
     "Do not upload an unsigned AAB",
     "python3 scripts/release_gate.py --strict-signing",

@@ -1,4 +1,4 @@
-package com.andrejivliev.shawarma58.data
+package com.shawarma58.game.data
 
 const val MAX_STARS_PER_LEVEL = 3
 

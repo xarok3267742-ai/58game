@@ -65,12 +65,12 @@
 - Ads/IAP/accounts/backend: намеренно исключены из v1.
 
 ## Ключевые файлы
-- `app/src/main/java/com/andrejivliev/shawarma58/ui/Shawarma58App.kt`
-- `app/src/main/java/com/andrejivliev/shawarma58/game/GameEngine.kt`
-- `app/src/main/java/com/andrejivliev/shawarma58/data/LevelCatalog.kt`
-- `app/src/main/java/com/andrejivliev/shawarma58/data/ProgressStore.kt`
-- `app/src/main/java/com/andrejivliev/shawarma58/ui/UiTestTags.kt`
-- `app/src/androidTest/java/com/andrejivliev/shawarma58/Shawarma58InstrumentedSmokeTest.kt`
+- `app/src/main/java/com/shawarma58/game/ui/Shawarma58App.kt`
+- `app/src/main/java/com/shawarma58/game/game/GameEngine.kt`
+- `app/src/main/java/com/shawarma58/game/data/LevelCatalog.kt`
+- `app/src/main/java/com/shawarma58/game/data/ProgressStore.kt`
+- `app/src/main/java/com/shawarma58/game/ui/UiTestTags.kt`
+- `app/src/androidTest/java/com/shawarma58/game/Shawarma58InstrumentedSmokeTest.kt`
 - `app/build.gradle.kts`
 
 ## Документы
@@ -206,14 +206,14 @@
 - Lint passed.
 - Real emulator screenshot pack captured from `shawarma58_api35` after the transparent-sprite alpha pass: `store/screenshots/shawarma_onboarding.png`, `store/screenshots/shawarma_menu.png`, `store/screenshots/shawarma_levels.png`, `store/screenshots/shawarma_gameplay.png`, `store/screenshots/shawarma_result.png`.
 - Additional QA screenshots captured from emulator: `store/screenshots/shawarma_wrong_order.png`, `store/screenshots/shawarma_endless_result.png`.
-- Gameplay smoke passed on clean AVD state after uninstalling other third-party packages. The foreground package stayed `com.andrejivliev.shawarma58.debug` during the captured flow.
+- Gameplay smoke passed on clean AVD state after uninstalling other third-party packages. The foreground package stayed `com.shawarma58.game.debug` during the captured flow.
 - Extended ADB smoke verified settings persistence across app restart, Android back navigation, Home/background pause, wrong-order mistake display and endless best-score persistence.
 - Visual WebP smoke reached gameplay and recaptured onboarding/menu/level/gameplay screenshots from the optimized APK; gameplay assets render correctly from WebP.
 - Reusable basic ADB smoke script passed on `emulator-5560`: clean install/data clear, first launch, onboarding, menu, level select, level 1, three correct orders and result screen; evidence saved in `build/android_smoke/retry-basic-20260611-220848`.
 - Reusable extended ADB smoke script passed after the June 14 screen-specific ImageGen background UI/UX pass on `emulator-5586`: settings persistence after returning to menu, wrong-order state, Android Back opening pause before exit, Home/background opening pause on return and endless result; latest evidence saved in `build/android_smoke/20260614-124352`, and handoff QA verifies every copied `qa/android_smoke/latest/` file matches the selected passing source by file set, manifest source, byte size and SHA-256.
 - Release gate verifies R8 minification and resource shrinking remain enabled.
 - Release gate writes a consolidated report with required gate checks, status and external blockers; handoff QA validates the copied `qa/release_gate/release_gate.json` has no local `FAIL` checks, matches current `build/reports/release_gate.*` by SHA-256, and matches `manifest.releaseGate`.
-- Artifact provenance QA passed: debug APK package is `com.andrejivliev.shawarma58.debug`, release merged manifest is `com.andrejivliev.shawarma58` / `1.0.0` / targetSdk 35, release AAB contains the base module, runtime WebP assets and embedded ProGuard map matching `mapping.txt`, and no source-workspace keystore-like files were found.
+- Artifact provenance QA passed: debug APK package is `com.shawarma58.game.debug`, release merged manifest is `com.shawarma58.game` / `1.0.0` / targetSdk 35, release AAB contains the base module, runtime WebP assets and embedded ProGuard map matching `mapping.txt`, and no source-workspace keystore-like files were found.
 - Signing environment QA passed the local guardrails: no partial signing env and no source-workspace keystore-like files. The expected unsigned local state remains an external blocker until upload-key env vars are set.
 - Upload keystore setup wrote guarded handoff evidence: keytool/path checks are available locally, and strict mode waits for a keystore outside the repo plus matching `SHAWARMA58_KEYSTORE*` env vars.
 - Upload operator runbook QA passed: the final upload-machine checklist documents signing env, Play service-account auth, hosted privacy URL, physical phone sanity, strict package checks, post-package validation, `signing.status = signed`, checksum verification and fastlane validate/upload commands without secret material.

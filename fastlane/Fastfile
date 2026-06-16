@@ -1,6 +1,6 @@
 default_platform(:android)
 
-PACKAGE_NAME = "com.andrejivliev.shawarma58"
+PACKAGE_NAME = "com.shawarma58.game"
 AAB_PATH = "app/build/outputs/bundle/release/app-release.aab"
 METADATA_PATH = "fastlane/metadata/android"
 PLAY_TRACK = "internal"

@@ -24,7 +24,7 @@ REPORT_MD = ROOT / "build/reports/privacy_data_safety.md"
 ANDROID_NS = "{http://schemas.android.com/apk/res/android}"
 
 TARGET_API_REQUIREMENT = 35
-EXPECTED_PACKAGE = "com.andrejivliev.shawarma58"
+EXPECTED_PACKAGE = "com.shawarma58.game"
 ALLOWED_RELEASE_PERMISSIONS = {
     f"{EXPECTED_PACKAGE}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION",
 }

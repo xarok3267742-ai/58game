@@ -21,7 +21,7 @@ Run the extended smoke for settings/error/endless coverage:
 python3 scripts/android_smoke_qa.py --serial <adb-serial> --extended
 ```
 
-The script installs `app/build/outputs/apk/debug/app-debug.apk`, verifies that `com.andrejivliev.shawarma58.debug/com.andrejivliev.shawarma58.MainActivity` resolves, clears only `com.andrejivliev.shawarma58.debug` app data, launches `MainActivity`, verifies the app is foreground, and drives the selected flow. If a shared emulator reports install success but the activity does not resolve, the script uninstalls only `com.andrejivliev.shawarma58.debug` and `com.andrejivliev.shawarma58.debug.test`, then reinstalls with downgrade allowed.
+The script installs `app/build/outputs/apk/debug/app-debug.apk`, verifies that `com.shawarma58.game.debug/com.shawarma58.game.MainActivity` resolves, clears only `com.shawarma58.game.debug` app data, launches `MainActivity`, verifies the app is foreground, and drives the selected flow. If a shared emulator reports install success but the activity does not resolve, the script uninstalls only `com.shawarma58.game.debug` and `com.shawarma58.game.debug.test`, then reinstalls with downgrade allowed.
 
 Basic mode covers onboarding, menu, level select, level 1, three correct orders and result screen.
 
@@ -47,4 +47,4 @@ Latest local pass:
 - Debug APK install uses `adb install -r -d`, then checks package resolution and retries a clean reinstall of only this app if Android's package manager returns an inconsistent state.
 - Text-navigation taps retry until the expected next screen text appears, which reduces false negatives from missed emulator `adb input tap` events.
 - Ingredient taps use cached tile bounds from the gameplay UI tree to reduce `uiautomator` flakiness.
-- `uiautomator` itself can write system crashes to the crash buffer on some emulator images; the pass/fail check only treats crashes for `com.andrejivliev.shawarma58.debug` as app failures.
+- `uiautomator` itself can write system crashes to the crash buffer on some emulator images; the pass/fail check only treats crashes for `com.shawarma58.game.debug` as app failures.

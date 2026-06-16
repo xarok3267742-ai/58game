@@ -5,11 +5,11 @@ plugins {
 }
 
 android {
-    namespace = "com.andrejivliev.shawarma58"
+    namespace = "com.shawarma58.game"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.andrejivliev.shawarma58"
+        applicationId = "com.shawarma58.game"
         minSdk = 23
         targetSdk = 35
         versionCode = 1

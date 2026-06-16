@@ -15,8 +15,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 REPORT_JSON = ROOT / "build/reports/instrumentation_smoke.json"
 REPORT_MD = ROOT / "build/reports/instrumentation_smoke.md"
-TARGET_PACKAGE = "com.andrejivliev.shawarma58.debug"
-TEST_PACKAGE = "com.andrejivliev.shawarma58.debug.test"
+TARGET_PACKAGE = "com.shawarma58.game.debug"
+TEST_PACKAGE = "com.shawarma58.game.debug.test"
 TEST_RUNNER = "androidx.test.runner.AndroidJUnitRunner"
 DEBUG_APK = ROOT / "app/build/outputs/apk/debug/app-debug.apk"
 ANDROID_TEST_APK = ROOT / "app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk"
